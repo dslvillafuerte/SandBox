@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="SandBox.Views.MyFirstPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             >
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding MyFirst}">
+            <StackLayout>
+            <Entry
+                       
+                        Keyboard="Email"
+                        Text="{Binding Email, Mode=TwoWay}"
+                        Placeholder="Email">
+                    </Entry>
+            
+            <Button
+                        BackgroundColor="Navy"
+                        BorderRadius="23"
+                        Command="{Binding LoginCommand}"
+                        HeightRequest="46"
+                     
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="Botón Uno"
+                        TextColor="White">
+                    </Button>
+                
+                <Image Source="camion.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding LoginCommand}"
+                                CommandParameter="Image1" />
+                        </Image.GestureRecognizers>
+                </Image>
+                
+                <Label
+                        HorizontalOptions="StartAndExpand"
+                        Text="Prueba de Label Button"
+                        VerticalOptions="Center">
+                    
+                    <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding LoginCommand}"
+                                CommandParameter="Image1" />
+                        </Label.GestureRecognizers>
+                 </Label>
+                
+            </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
